@@ -1,13 +1,13 @@
 # LogcatViewer
 
-A cross-platform desktop Flutter application for viewing Android application logs (logcat output) in real-time.
+A cross-platform **desktop** Flutter application for viewing Android application logs (logcat output) in real-time.
 
 ## Features
 
 ### Core Functionality
 - **Real-time Log Streaming**: Connect to Android devices or emulators via ADB and stream logs in real-time
 - **Multi-device Support**: Detect and select from multiple connected devices
-- **Cross-platform**: Works on Windows, macOS, and Linux
+- **Cross-platform Desktop**: Works on Windows, macOS, and Linux
 
 ### User Interface
 - **Material 3 Design**: Modern, clean interface with Material Design 3
@@ -35,33 +35,40 @@ A cross-platform desktop Flutter application for viewing Android application log
 
 - **Flutter SDK**: Version 3.10.4 or higher
 - **Android SDK Platform Tools**: ADB must be installed and in PATH
-- **Operating System**: Windows, macOS, or Linux
+- **Operating System**: Windows, macOS, or Linux (desktop platforms only)
+- **Windows Users**: Developer Mode must be enabled for plugin support
 
 ## Installation
 
 1. Clone this repository
-2. Ensure Flutter is installed and configured
-3. Install dependencies:
+2. Ensure Flutter is installed and configured for desktop development
+3. **Windows users**: Enable Developer Mode
+   ```bash
+   start ms-settings:developers
+   ```
+4. Install dependencies:
    ```bash
    flutter pub get
    ```
 
 ## Running the Application
 
-### Desktop (Windows)
+### Windows
 ```bash
 flutter run -d windows
 ```
 
-### Desktop (macOS)
+### macOS
 ```bash
 flutter run -d macos
 ```
 
-### Desktop (Linux)
+### Linux
 ```bash
 flutter run -d linux
 ```
+
+> **Note**: This is a desktop-only application. Android, iOS, and web platforms are not supported.
 
 ## Usage
 
@@ -127,6 +134,12 @@ lib/
 - **path**: Path manipulation utilities
 
 ## Troubleshooting
+
+### Windows: Developer Mode Required
+If you see "Building with plugins requires symlink support" error:
+1. Run `start ms-settings:developers` to open Windows Settings
+2. Toggle "Developer Mode" to ON
+3. Restart your terminal and try again
 
 ### ADB Not Found
 If you see "ADB not found" error:
